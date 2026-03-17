@@ -1,1 +1,29 @@
+1. Room Info
+
+-->  Room Name :- Agent T
+-->  Difficulty :- Easy
+-->  Date: 17-03-2026
+
+2. Recon & Enumeration
+
+-->  Nmap Scan
+
+--> nmap -sV -p 80 <Targat_IP>  //Nmap using for scanne network and ports 
+
+Output:
+
+--> Port 80: HTTP (PHP 8.1.0-dev)
+
+3. Vulnerability Found
+
+-> PHP 8.1.0-dev - Backdoor RCE
+
+4. Exploitation
+
+-->  Exploit command /tool
+  python3 exploit.py http://<Target_IP>
+
+5. Flags
+
+--> User Flag: THM{4127d0530abf16d6d23973e3df8dbecb}
 
